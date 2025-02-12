@@ -8,8 +8,11 @@ public class LibraryApp {
 		Book book1 = new Book("Cat in the Hat", "Dr. Seuss", "123456789", 7.95);
 		
 		System.out.println("Title: "  + book1.getTitle() + " Author: " + book1.getAuthor() + " ISBN: " + book1.getISBN() + " Price: " + book1.getPrice());
-		Book book2 = new Book("TestTitle", "TestAuthor", "123456788", 8.05);
-		System.out.println("Test: "+ book1.equals(book2));
+		Library lib = new Library();
+		lib.addBook(book1);
+		Book book2 = new Book();
+		lib.addBook(book2);
+		System.out.println(lib.searchByISBN("unknown").toString());
 	}
 
 }
