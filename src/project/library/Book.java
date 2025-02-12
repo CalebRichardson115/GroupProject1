@@ -44,5 +44,37 @@ public class Book {
 	public double getPrice() {
 		return this.price;
 	}
+	//Setter functions
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public void setISBN(String ISBN) {
+		this.ISBN = ISBN;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		return "Title: "+this.title+" Author: "+this.author+" ISBN: "+this.ISBN+" Price: "+this.price;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		Book otherBook = (Book)other;
+		if(otherBook.ISBN == this.ISBN) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 }
