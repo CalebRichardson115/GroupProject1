@@ -1,9 +1,16 @@
 package project.library;
 
+import project.library.Book;
+import java.util.Arrays;
+
 public class Library {
 
+	private Book[] books;
+	private int count;
+	
 	public Library() {
-		// TODO Auto-generated constructor stub
+		this.books = new Book[5];
+		this.count = 0;
 	}
 
 }
