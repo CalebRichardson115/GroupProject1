@@ -63,7 +63,7 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "Title: "+this.title+" Author: "+this.author+" ISBN: "+this.ISBN+" Price: "+this.price;
+		return this.title+" by "+this.author+" (ISBN: "+this.ISBN+", $"+this.price +")";
 	}
 	
 	@Override

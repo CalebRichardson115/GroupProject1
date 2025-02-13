@@ -1,18 +1,41 @@
 package project.library;
 
 import project.library.Book;
+import project.library.Library;
 
 public class LibraryApp {
 	public static void main (String[] args) {
-		//For now, use this as a function tester. We will put it to specs once Book and Library are fully functional.
-		Book book1 = new Book("Cat in the Hat", "Dr. Seuss", "123456789", 7.95);
-		
-		System.out.println("Title: "  + book1.getTitle() + " Author: " + book1.getAuthor() + " ISBN: " + book1.getISBN() + " Price: " + book1.getPrice());
+		//Initializes 3 books in different ways. Also initializes library.
+		Book book1 = new Book("Cat in the Hat", "Dr. Seuss", "123-456789", 7.95);
 		Library lib = new Library();
-		lib.addBook(book1);
 		Book book2 = new Book();
+		Book book3 = new Book(book1);
+		//Setting new values for book2 and book3
+		book2.setAuthor("Homer");
+		book2.setTitle("The Odyssey");
+		book2.setISBN("123-456780");
+		book2.setPrice(35.99);
+		
+		book3.setAuthor("Jeff Kinney");
+		book3.setTitle("Diary of a Wimpy Kid");
+		book3.setISBN("123-456781");
+		book3.setPrice(12.25);
+		
+		lib.addBook(book1);
 		lib.addBook(book2);
-		System.out.println(lib.searchByISBN("unknown").toString());
+		lib.addBook(book3);
+		//Does a successful search and then an unsuccessful search.
+		lib.searchByISBN("123-456780");
+		lib.searchByISBN("123-456782");
+		//Displays before and after removal and then fails a removal.
+		lib.displayBooks();
+		
+		lib.removeBook(book2);
+		
+		lib.displayBooks();
+		
+		lib.removeBook(book2);
+		
 	}
 
 }
