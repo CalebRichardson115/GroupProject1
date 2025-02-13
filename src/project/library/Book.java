@@ -60,12 +60,12 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+	//Prints a book.
 	@Override
 	public String toString() {
 		return this.title+" by "+this.author+" (ISBN: "+this.ISBN+", $"+this.price +")";
 	}
-	
+	//Tells if a given book is equal to another.
 	@Override
 	public boolean equals(Object other) {
 		Book otherBook = (Book)other;
